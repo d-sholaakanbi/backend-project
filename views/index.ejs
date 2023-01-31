@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage || Employees</title>
+</head>
+<body>
+   <nav>
+    <ul>
+        <li><a href="/employees">Homepage</a></li>
+        <li><a href="/create">Add employee</a></li>
+    </ul>
+   </nav>
+   <h1>All Employees</h1>
+   <% if(employees.length > 0) { %>
+    <h1> List of all employees</h1>
+    <% employees.forEach((e)=>{ %>
+    <h3><%= e.name %></h3>
+    <h3><%= e.role %></h3>
+    <a href="/employees/<%=e._id%>">read more about this person</a>
+    <%}) %> 
+    <%}else{ %>
+    <h1> There is no employee to display </h1>
+    <% } %>
+</body>
+</html>
